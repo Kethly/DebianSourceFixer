@@ -16,7 +16,7 @@ function GetData()  {
   //header('Access-Control-Allow-Origin: *');
   XMLReq.open("GET", "https://www.debian.org/favicon.ico");
   
-  //XMLReq.setRequestHeader('Access-Control-Allow-Origin', '*');
+  XMLReq.setRequestHeader('Access-Control-Allow-Origin', 'https://www.debian.org/favicon.ico');
   
 
   XMLReq.onreadystatechange = function() {
