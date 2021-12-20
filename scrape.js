@@ -5,5 +5,5 @@ function getWebsite(){
           if(!error && response.statusCode==200) {
                 const $= cheerio.load(html);
                   }
-          }
+          });
 }
