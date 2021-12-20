@@ -1,4 +1,4 @@
-define(["request-promise", "cheerio"],
+define(["/request-promise", "/cheerio"],
     function(request, cheerio) {
 //       const request = require("request-promise");
 //       const cheerio = require("cheerio");
