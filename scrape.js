@@ -1,12 +1,12 @@
 function GetData()  {
   var XMLReq = new XMLHttpRequest();
 
-  XMLReq.open( "GET", "https://edition.cnn.com/")
+  XMLReq.open( "GET", "https://packages.debian.org/")
 
 
   XMLReq.onreadystatechange = function() {
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
-      alert(XMLReq.responseText);
+      console.log(XMLReq.responseText);
     }
   }
 
