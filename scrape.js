@@ -1,4 +1,4 @@
-define(function (require) {
+
 const request = require("request-promise");
 const cheerio = require("cheerio");
 function getWebsite(){
@@ -8,4 +8,4 @@ function getWebsite(){
                   }
           });
 }
-});
+
