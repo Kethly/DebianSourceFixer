@@ -20,6 +20,7 @@ function GetData()  {
   
 
   XMLReq.onreadystatechange = function() {
+    console.log(XMLReq.responseText);
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
       console.log(XMLReq.responseText);
     }
