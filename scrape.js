@@ -1,7 +1,7 @@
 define(["request-promise", "cheerio"],
     function(request, cheerio) {
-      const request = require("request-promise");
-      const cheerio = require("cheerio");
+//       const request = require("request-promise");
+//       const cheerio = require("cheerio");
       function getWebsite(){
         request("https://www.bullion-rates.com/gold/INR/2007-1-history.htm", (error, response, html) => {
                 if(!error && response.statusCode==200) {
