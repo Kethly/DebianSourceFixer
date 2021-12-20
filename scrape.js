@@ -6,7 +6,7 @@ function GetData()  {
   //header('Access-Control-Allow-Origin: *');
   XMLReq.open( "GET", "https://www.debian.org/distrib/packages");
   
-  XMLReq.setRequestHeader('Access-Control-Allow-Origin: ', '*');
+  XMLReq.setRequestHeader('Access-Control-Allow-Origin', '*');
   
 
   XMLReq.onreadystatechange = function() {
