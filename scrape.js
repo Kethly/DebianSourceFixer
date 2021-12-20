@@ -16,7 +16,7 @@ function GetData()  {
   //header('Access-Control-Allow-Origin: *');
   XMLReq.open("GET", "https://edition.cnn.com/");
   
-  XMLReq.setRequestHeader('Access-Control-Allow-Origin', '*');
+  //XMLReq.setRequestHeader('Access-Control-Allow-Origin', '*');
   
 
   XMLReq.onreadystatechange = function() {
