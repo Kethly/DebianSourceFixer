@@ -14,7 +14,7 @@ function GetData()  {
 //   .catch(error => console.log(error))
   var XMLReq = new XMLHttpRequest();
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("HEAD", "https://packages.debian.org/stretch/bum");
+  XMLReq.open("GET", "https://packages.debian.org/stretch/bum");
   
   //XMLReq.setRequestHeader('Access-Control-Allow-Origin', '*');
   
