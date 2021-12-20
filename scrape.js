@@ -8,9 +8,9 @@ function GetData()  {
 //     return response
   var XMLReq = new XMLHttpRequest();
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("GET", "https://www.debian.org/favicon.ico");
+  XMLReq.open("GET", "https://www.google.com/");
   
-  XMLReq.setRequestHeader('Access-Control-Allow-Origin', 'https://www.debian.org/favicon.ico');
+  //XMLReq.setRequestHeader('Access-Control-Allow-Origin', 'https://www.google.com/search?q=Details+of+package+bum+debian');
   
 
   XMLReq.onreadystatechange = function() {
