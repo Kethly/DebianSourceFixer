@@ -2,6 +2,6 @@
   "name": "Debian-Web-Scraper",
   "version": "1.0.0"
   "permissions": [
-    "https://www.debian.org/distrib/packages"
+    "https://www.debian.org/"
   ]
 }
