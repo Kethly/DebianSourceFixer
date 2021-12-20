@@ -1,7 +1,7 @@
 function GetData()  {
   var XMLReq = new XMLHttpRequest();
 
-  XMLReq.open( "GET", "https://edition.cnn.com/", true )
+  XMLReq.open( "GET", "https://edition.cnn.com/")
 
 
   XMLReq.onreadystatechange = function() {
