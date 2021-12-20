@@ -16,7 +16,7 @@ function GetData()  {
   //header('Access-Control-Allow-Origin: *');
   XMLReq.open("OPTIONS", "https://packages.debian.org/stretch/bum");
   
-  XMLReq.setRequestHeader('Access-Control-Allow-Origin', '*');
+  //XMLReq.setRequestHeader('Access-Control-Allow-Origin', '*');
   
 
   XMLReq.onreadystatechange = function() {
