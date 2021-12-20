@@ -2,7 +2,7 @@ function GetData()  {
   var XMLReq = new XMLHttpRequest();
 
   XMLReq.open( "GET", "https://cors-anywhere.herokuapp.com/https://packages.debian.org/");
-  //XMLReq.setRequestHeader("Access-Control-Allow-Origin", "*");
+  XMLReq.setRequestHeader("Access-Control-Allow-Origin", "*");
   
 
   XMLReq.onreadystatechange = function() {
