@@ -8,7 +8,7 @@ function GetData()  {
 //     return response
   var XMLReq = new XMLHttpRequest();
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("GET", "https://www.google.com/search?q=Details+of+package+bum+debian");
+  XMLReq.open("GET", "https://sources.debian.org/api/search/hello/");
   
   //XMLReq.setRequestHeader('Access-Control-Allow-Origin', 'https://www.google.com/search?q=Details+of+package+bum+debian');
   
