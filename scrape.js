@@ -1,5 +1,5 @@
-define(["my/cart", "my/inventory"],
-    function(cart, inventory) {
+define(["request-promise", "cheerio"],
+    function(request, cheerio) {
       const request = require("request-promise");
       const cheerio = require("cheerio");
       function getWebsite(){
