@@ -1,5 +1,5 @@
 function GetData()  {
-  fetch("https://world.openfoodfacts.org/category/pastas/1.json")
+  fetch("https://www.debian.org/distrib/packages")
   .then(response => {
     // indicates whether the response is successful (status code 200-299) or not
     if (!response.ok) {
