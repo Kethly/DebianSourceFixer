@@ -16,7 +16,7 @@ function GetData()  {
   //header('Access-Control-Allow-Origin: *');
   XMLReq.open( "GET", "https://www.debian.org/distrib/packages", false);
   
-  XMLReq.setRequestHeader('sec-fetch-mode', 'no-cors');
+  XMLReq.setRequestHeader('mode', 'no-cors');
   
 
   XMLReq.onreadystatechange = function() {
