@@ -1,14 +1,15 @@
-define(["/request-promise", "/cheerio"],
-    function(request, cheerio) {
-//       const request = require("request-promise");
-//       const cheerio = require("cheerio");
+function GetData()  {
+  var XMLReq = new XMLHttpRequest();
 
-        request("https://www.bullion-rates.com/gold/INR/2007-1-history.htm", (error, response, html) => {
-                if(!error && response.statusCode==200) {
-                      const $= cheerio.load(html);
-                      console.log("success!")
-                        }
-                });
-      
-});
+  XMLReq.open( "GET", "https://edition.cnn.com/", false )
+
+
+  XMLReq.onreadystatechange = function() {
+    if(XMLReq.readyState == 4 && XMLReq.status == 200) {
+      alert(XMLReq.responseText);
+    }
+  }
+
+  XMLReq.send();
+}
 
