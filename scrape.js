@@ -14,7 +14,7 @@ function GetData()  {
 //   .catch(error => console.log(error))
   var XMLReq = new XMLHttpRequest();
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("GET", "https://packages.debian.org/stretch/bum");
+  XMLReq.open("GET", "https://stackoverflow.com/questions/22665232/what-can-cause-chrome-to-give-an-neterr-failed-on-cached-content-against-a-ser");
   
   XMLReq.setRequestHeader('Access-Control-Allow-Origin', '*');
   
