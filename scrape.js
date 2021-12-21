@@ -4,8 +4,9 @@ function GetData()  {
     // indicates whether the response is successful (status code 200-299) or not
     if (!response.ok) {
       throw new Error(`Request failed with status ${reponse.status}`)
-    });
-    return response.json
+    }
+    return response.json();
+  });
 //   var XMLReq = new XMLHttpRequest();
 //   //header('Access-Control-Allow-Origin: *');
 //   XMLReq.open("GET", "https://sources.debian.org/api/search/hello/");
