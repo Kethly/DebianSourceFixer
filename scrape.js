@@ -42,10 +42,12 @@ function GetData()  {
       htmlArray = XMLReq.responseText.split("\n")
       for (let index = 0; index < htmlArray.length; index++) {
         htmlArray[index] = htmlArray[index].trim();
+        
       }
-      htmlArray = htmlArray.filter(n => n)
-      console.log(findByElement(findByElement(htmlArray, "ul")[1], "li"))
-      document.getElementById("output").innerText = htmlArray
+      console.log(XMLReq.responseText.getElementById("content"));
+      htmlArray = htmlArray.filter(n => n);
+      console.log(findByElement(findByElement(htmlArray, "ul")[1], "li"));
+      document.getElementById("output").innerText = htmlArray;
       
     }
   }
