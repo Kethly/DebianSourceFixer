@@ -12,7 +12,7 @@ function GetData()  {
   XMLReq.open("GET", "https://sources.debian.org/doc/api/#copyright");
   
   XMLReq.setRequestHeader('access-control-allow-origin', '*');
-  XMLReq.setRequestHeader('access-control-request-method', 'true');
+  XMLReq.setRequestHeader('access-control-request-method', 'GET');
 
   XMLReq.onreadystatechange = function() {
     console.log(XMLReq.responseText);
