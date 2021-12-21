@@ -18,6 +18,8 @@ function GetData()  {
     console.log(XMLReq.responseText);
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
       console.log(XMLReq.responseText);
+      var s= document.getElementById("output");
+      s.value = XMLReq.responseText
     }
   }
 
