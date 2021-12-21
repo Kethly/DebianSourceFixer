@@ -41,7 +41,7 @@ async function getData() {
       "sec-ch-ua-platform": "Windows",
       "sec-fetch-dest": "document",
       "sec-fetch-mode": "navigate",
-      "sec-fetch-site": "same-origin",
+      "sec-fetch-site": "sameorigin",
       "sec-fetch-user": "?1",
       "upgrade-insecure-requests": "1",
       "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"}});
