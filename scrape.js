@@ -25,7 +25,7 @@ function GetData()  {
 }
 
 async function getData() {
-  const response = await fetch('/api/?keywords=bum');
+  const response = await fetch('/api/search?keywords=bum&searchon=names&suite=stable&section=all');
   const data = await response.json();
   console.log(data);
 }
