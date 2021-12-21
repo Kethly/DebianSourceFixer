@@ -10,7 +10,7 @@ function findByElement(arr, elem){
         if(arr[index].indexOf("</" + elem + ">") >= 0){
           b = index;
           console.log(index);
-          found.push(arr.slice(a, b));
+          found.push(arr.slice(a + 1, b));
         }
  
       }
