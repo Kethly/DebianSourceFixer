@@ -1,12 +1,19 @@
 function findByElement(arr, elem){
+  var found = [];
   for (let index = 0; index < arr.length; index++) {
+        var a = 0;
+        var b = 0;
         if(arr[index].indexOf("<" + elem + ">") >= 0){
-          console.log(index)
+          a = index;
+          console.log(index);
         }
         if(arr[index].indexOf("</" + elem + ">") >= 0){
-          console.log(index)
+          b = index;
+          console.log(index);
         }
+         found.push(arr.slice(a, b));
       }
+  return found;
 }
 function GetData()  {
 //   fetch("//sources.debian.org/api/search/query", {mode:"cors"})
