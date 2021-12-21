@@ -1,8 +1,9 @@
 function findByElement(arr, elem){
-  var found = [];
+  var found = []; 
+  var a = 0;
+  var b = 0;
   for (let index = 0; index < arr.length; index++) {
-        var a = 0;
-        var b = 0;
+
         if(arr[index].indexOf("<" + elem + ">") >= 0){
           a = index;
           console.log(index);
@@ -10,7 +11,9 @@ function findByElement(arr, elem){
         if(arr[index].indexOf("</" + elem + ">") >= 0){
           b = index;
           console.log(index);
-          found.push(arr.slice(24, b));
+          found.push(arr.slice(a, b));
+          a = 0;
+          b = 0;
         }
  
       }
