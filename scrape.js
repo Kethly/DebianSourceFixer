@@ -19,7 +19,7 @@ function GetData()  {
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
       //console.log(XMLReq.responseText);
       htmlArray = XMLReq.responseText.split("\n")
-      console.log(htmlArray[0])
+      console.log(htmlArray)
       document.getElementById("output").innerText = htmlArray[0]
       
     }
