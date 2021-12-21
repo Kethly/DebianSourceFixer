@@ -9,7 +9,7 @@ function GetData()  {
 //   });
   var XMLReq = new XMLHttpRequest();
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("GET", "sources.debian.org/api/search/query/");
+  XMLReq.open("GET", "/api/search?keywords=bum&searchon=names&suite=stable&section=all");
   
   XMLReq.setRequestHeader('access-control-allow-origin', '*');
   XMLReq.setRequestHeader('access-control-request-method', 'GET');
