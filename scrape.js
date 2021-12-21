@@ -44,7 +44,6 @@ function GetData()  {
         htmlArray[index] = htmlArray[index].trim();
         
       }
-      console.log(XMLReq.responseText.getElementById("content"));
       htmlArray = htmlArray.filter(n => n);
       console.log(findByElement(findByElement(htmlArray, "ul")[1], "li"));
       document.getElementById("output").innerText = htmlArray;
