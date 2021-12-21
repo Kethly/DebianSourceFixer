@@ -12,8 +12,8 @@ function GetData()  {
   //header('Access-Control-Allow-Origin: *');
   XMLReq.open("GET", "/api/search?keywords=bum&searchon=names&section=all&exact=1");
   
-  XMLReq.setRequestHeader('access-control-allow-origin', '*');
-  XMLReq.setRequestHeader('access-control-request-method', 'GET');
+  //XMLReq.setRequestHeader('access-control-allow-origin', '*');
+  //XMLReq.setRequestHeader('access-control-request-method', 'GET');
 
   XMLReq.onreadystatechange = function() {
     console.log(XMLReq.responseText);
