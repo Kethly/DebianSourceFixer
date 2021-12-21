@@ -9,7 +9,7 @@ function GetData()  {
 //   });
   var XMLReq = new XMLHttpRequest();
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("GET", "//sources.debian.org/api/search/query/");
+  XMLReq.open("GET", "sources.debian.org/api/search/query/");
   
   XMLReq.setRequestHeader('access-control-allow-origin', '*');
   XMLReq.setRequestHeader('access-control-request-method', 'GET');
@@ -25,7 +25,7 @@ function GetData()  {
 }
 
 async function getData() {
-  const response = await fetch('//sources.debian.org/api/search/query/', { 
+  const response = await fetch('sources.debian.org/api/search/query/', { 
     Headers: {
       "Access-Control-Allow-Origin": "*",
       "authority": "sources.debian.org",
