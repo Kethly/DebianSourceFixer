@@ -19,7 +19,7 @@ function GetData()  {
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
       console.log(XMLReq.responseText);
       htmlArray = XMLReq.responseText.split("\n")
-      document.getElementById("output").innerHTML = htmlArray[0]
+      document.getElementById("output").innerHTML = "hi! " + htmlArray[0]
       
     }
   }
