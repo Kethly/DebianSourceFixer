@@ -31,7 +31,7 @@ function GetData()  {
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("GET", "/api/search?keywords=bum&searchon=names&section=all&exact=1");
+  XMLReq.open("GET", "/api/search?keywords=wireshark&searchon=names&section=all&exact=1");
   
   //XMLReq.setRequestHeader('access-control-allow-origin', '*');
   //XMLReq.setRequestHeader('access-control-request-method', 'GET');
