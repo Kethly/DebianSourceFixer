@@ -18,6 +18,7 @@ function GetData()  {
   XMLReq.onreadystatechange = function() {
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
       //console.log(XMLReq.responseText);
+      htmlArray = XMLReq.responseText.split("\n")
       for (let index = 0; index < htmlArray.length; index++) {
         htmlArray[index] = htmlArray[index].trim();
       }
