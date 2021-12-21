@@ -24,7 +24,7 @@ function GetData()  {
       }
       htmlArray = htmlArray.filter(n => n)
       console.log(htmlArray)
-      document.getElementById("output").innerText = htmlArray[0]
+      document.getElementById("output").innerText = htmlArray
       
     }
   }
