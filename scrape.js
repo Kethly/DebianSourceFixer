@@ -1,3 +1,10 @@
+function findByElement(arr, elem){
+  for (let index = 0; index < arr.length; index++) {
+        if(arr[index].indexOf("<" + elem + ">") >= 0){
+          console.log(index)
+        }
+      }
+}
 function GetData()  {
 //   fetch("//sources.debian.org/api/search/query", {mode:"cors"})
 //   .then(response => {
@@ -23,7 +30,7 @@ function GetData()  {
         htmlArray[index] = htmlArray[index].trim();
       }
       htmlArray = htmlArray.filter(n => n)
-      console.log(htmlArray)
+      console.log(findByElement(htmlArray, "ul")
       document.getElementById("output").innerText = htmlArray
       
     }
