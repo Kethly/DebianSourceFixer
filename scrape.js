@@ -19,6 +19,9 @@ function GetData()  {
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
       //console.log(XMLReq.responseText);
       htmlArray = XMLReq.responseText.split("\n").filter(n => n)
+      htmlArray.forEach(element => {
+        element = element.toString().trim()
+      });
       console.log(htmlArray)
       document.getElementById("output").innerText = htmlArray[0]
       
