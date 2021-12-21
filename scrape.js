@@ -9,7 +9,7 @@ function GetData()  {
 //   });
   var XMLReq = new XMLHttpRequest();
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("GET", "/api/search?keywords=bum&searchon=names&suite=stable&section=all");
+  XMLReq.open("GET", "/api/search?keywords=bum&searchon=names&section=all&exact=1");
   
   XMLReq.setRequestHeader('access-control-allow-origin', '*');
   XMLReq.setRequestHeader('access-control-request-method', 'GET');
