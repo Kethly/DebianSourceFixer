@@ -25,7 +25,7 @@ function GetData()  {
 }
 
 async function getData() {
-  const response = await fetch('sources.debian.org/api/search/query/', { 
+  const response = await fetch('https://sources.debian.org/api/search/query/', { 
     Headers: {
       "Access-Control-Allow-Origin": "*",
       "authority": "sources.debian.org",
