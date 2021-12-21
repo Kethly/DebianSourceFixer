@@ -42,6 +42,7 @@ function GetData()  {
       }
       htmlArray = htmlArray.filter(n => n)
       console.log(findByElement(htmlArray, "ul"))
+      console.log(htmlArray.slice(24,29))
       document.getElementById("output").innerText = htmlArray
       
     }
