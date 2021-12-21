@@ -11,7 +11,7 @@ function GetData()  {
   //header('Access-Control-Allow-Origin: *');
   XMLReq.open("GET", "https://sources.debian.org/doc/api/#copyright");
   
-  //XMLReq.setRequestHeader('Access-Control-Allow-Origin', 'https://www.google.com/search?q=Details+of+package+bum+debian');
+  XMLReq.setRequestHeader('access-control-allow-origin', '*');
   
 
   XMLReq.onreadystatechange = function() {
