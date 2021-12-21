@@ -26,7 +26,7 @@ function GetData()  {
 }
 
 async function getData() {
-  const response = await fetch('//sources.debian.org/api/search/query');
+  const response = await fetch('//sources.debian.org/api/search');
   const data = await response.json();
   console.log(data);
 }
