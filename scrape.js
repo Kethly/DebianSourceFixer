@@ -22,7 +22,7 @@ function GetData()  {
       for (let index = 0; index < htmlArray.length; index++) {
         htmlArray[index] = htmlArray[index].trim();
       }
-      htmlArray = XMLReq.responseText.split("\n").filter(n => n)
+      htmlArray = htmlArray.filter(n => n)
       console.log(htmlArray)
       document.getElementById("output").innerText = htmlArray[0]
       
