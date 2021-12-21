@@ -45,7 +45,7 @@ function GetData()  {
         
       }
       htmlArray = htmlArray.filter(n => n);
-      console.log(findByElement(findByElement(findByElement(htmlArray, "ul")[1], "li"), "a"));
+      console.log(findByElement(findByElement(findByElement(htmlArray, "ul")[1], "li")[0], "a"));
       document.getElementById("output").innerText = htmlArray;
       
     }
