@@ -44,7 +44,7 @@ function GetData()  {
         htmlArray[index] = htmlArray[index].trim();
       }
       htmlArray = htmlArray.filter(n => n)
-      console.log(findByElement(htmlArray, "ul"))
+      console.log(findByElement(findByElement(htmlArray, "ul"), "il"))
       console.log(htmlArray.slice(24,29))
       document.getElementById("output").innerText = htmlArray
       
