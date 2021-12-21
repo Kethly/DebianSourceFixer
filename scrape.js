@@ -30,7 +30,7 @@ function GetData()  {
         htmlArray[index] = htmlArray[index].trim();
       }
       htmlArray = htmlArray.filter(n => n)
-      console.log(findByElement(htmlArray, "ul")
+      console.log(findByElement(htmlArray, "ul"))
       document.getElementById("output").innerText = htmlArray
       
     }
