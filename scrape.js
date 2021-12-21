@@ -8,6 +8,7 @@ function GetData()  {
 //     return response.json();
 //   });
   var XMLReq = new XMLHttpRequest();
+  var htmlArray = [];
   //header('Access-Control-Allow-Origin: *');
   XMLReq.open("GET", "/api/search?keywords=bum&searchon=names&section=all&exact=1");
   
@@ -18,7 +19,9 @@ function GetData()  {
     console.log(XMLReq.responseText);
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
       console.log(XMLReq.responseText);
-      document.getElementById("output").innerHTML = XMLReq.responseText
+      htmlArray = XMLReq.responseText.split("\n")
+      document.getElementById("output").innerHTML = htmlArray[0]
+      
     }
   }
 
