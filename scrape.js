@@ -4,7 +4,7 @@ function findByElement(arr, elem){
   var b = 0;
   for (let index = 0; index < arr.length; index++) {
 
-        if(arr[index].indexOf("<" + elem + ">") >= 0){
+        if(arr[index].indexOf("<" + elem + ">") >= 0 || arr[index].indexOf("<" + elem) >= 0){
           a = index;
           console.log(index);
         }
