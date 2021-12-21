@@ -3,6 +3,9 @@ function findByElement(arr, elem){
         if(arr[index].indexOf("<" + elem + ">") >= 0){
           console.log(index)
         }
+        if(arr[index].indexOf("</" + elem + ">") >= 0){
+          console.log(index)
+        }
       }
 }
 function GetData()  {
