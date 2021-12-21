@@ -1,5 +1,5 @@
 function GetData()  {
-  fetch("https://sources.debian.org/api/search/hello/")
+  fetch("//sources.debian.org/api/search/query")
   .then(response => {
     // indicates whether the response is successful (status code 200-299) or not
     if (!response.ok) {
