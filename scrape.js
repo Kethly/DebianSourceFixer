@@ -38,12 +38,9 @@ function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">"
   for (let index = 0; index < simple.length; index++) {
     if(simple.charAt(index) === initial && a === 0){
           a = index;
-          console.log(index);
         }
         if(simple.charAt(index) === end && a != 0){
           b = index;
-          console.log(index);
-          console.log(simple.slice(a + 1, b));
           c += (simple.slice(a + 1, b));
           a = 0;
           b = 0;
@@ -54,7 +51,9 @@ function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">"
 }
 
 function loopSearchForPackageType(arr, suite="stable"){
-  console.log("suite", suite);
+  if(suite === null){
+    suite = "stable";
+  }
   if(arr === ""){
     console.log("nothing was found.  If you're reading this, maybe the package you were looking for isn't here or doesn't exist?  Check your search words again.");
     return "";
