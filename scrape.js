@@ -54,6 +54,7 @@ function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">"
 }
 
 function loopSearchForPackageType(arr, suite="stable"){
+  console.log("suite", suite);
   if(arr === ""){
     console.log("nothing was found.  If you're reading this, maybe the package you were looking for isn't here or doesn't exist?  Check your search words again.");
     return "";
