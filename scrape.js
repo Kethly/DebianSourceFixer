@@ -85,7 +85,7 @@ function GetPackageURL()  {
       var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
       document.getElementById("p").innerText = searchResult;
-      var test = window.location.replace("http://https://debianexactpackagesource.netlify.app/test.html");
+      var test = window.location.replace("https://debianexactpackagesource.netlify.app/test.html");
       test.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
       
       return searchResult;
