@@ -73,7 +73,7 @@ function GetData()  {
       }
       htmlArray = htmlArray.filter(n => n);
       //console.log(findByElement(findByElement(findByElement(htmlArray, "ul")[1], "li")[0], "a"));
-      document.getElementById("output").innerText = getInnerText(findByElement(findByElement(htmlArray, "ul")[1], "li")[0]);
+      document.getElementById("output").innerText = getInnerText(findByElement(findByElement(htmlArray, "ul")[1], "li")[0]) + getInnerText(findByElement(findByElement(htmlArray, "ul")[1], "li")[1]);
       //document.getElementById("output").innerText = htmlArray;
       
     }
