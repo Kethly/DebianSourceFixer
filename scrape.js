@@ -1,10 +1,10 @@
 const queryString = window.location.search;
 console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
-const package = urlParams.get('package');
-const suite = urlParams.get('suite');
-console.log(package);
-console.log(suite);
+const spackage = urlParams.get('package');
+const ssuite = urlParams.get('suite');
+console.log(spackage);
+console.log(ssuite);
 function findByElement(arr, elem){
   if(!arr){
     return "";
@@ -76,8 +76,8 @@ function GetData()  {
 //     }
 //     return response.json();
 //   });
-  searchterm = "bum"
-  suite = "oldstable"
+  searchterm = ppackage
+  suite = ssuite
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   //header('Access-Control-Allow-Origin: *');
