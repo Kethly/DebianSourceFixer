@@ -71,7 +71,7 @@ function GetData()  {
 //     }
 //     return response.json();
 //   });
-  searchterm = "wireshark"
+  searchterm = "bum"
   suite = "oldstable"
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
