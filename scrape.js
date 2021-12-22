@@ -68,8 +68,8 @@ function loopSearchForPackageType(arr, suite="stable"){
 }
 
 function GetPackageURL()  {
-  var searchterm = "bum";//spackage
-  var suite = "stable";//ssuite
+  var searchterm = spackage;
+  var suite = ssuite;
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
@@ -84,7 +84,7 @@ function GetPackageURL()  {
       htmlArray = htmlArray.filter(n => n);
       var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
-      document.getElementById("p").innerText = searchResult;
+      document.write(searchResult);
      // var test = window.open("/test.html");
       //test.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
       
