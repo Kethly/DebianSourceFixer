@@ -23,10 +23,6 @@ function findByElement(arr, elem){
   return found;
 }
 function getInnerText(arr){
-   if(arr === ""){
-     console.log("nothing foundx1");
-    return "";
-  }
   var simple = arr.join('');
   console.log(simple)
   var a = 0;
@@ -51,7 +47,7 @@ function getInnerText(arr){
 
 function loopSearchForPackageType(arr, suite="stable"){
   if(arr === ""){
-    console.log("nothing foundx2");
+    console.log("nothing was found.  If you're reading this, maybe the package you were looking for isn't here or doesn't exist?  Check your search words again.");
     return "";
   }
   if (arr.length <= 1) { return arr[0]; }
