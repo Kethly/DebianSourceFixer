@@ -16,11 +16,11 @@ function findByElement(arr, elem){
 
         if(arr[index].indexOf("<" + elem + ">") >= 0 || arr[index].indexOf("<" + elem) >= 0){
           a = index;
-          console.log(index);
+          //console.log(index);
         }
         if(arr[index].indexOf("</" + elem + ">") >= 0){
           b = index;
-          console.log(index);
+          //console.log(index);
           found.push(arr.slice(a, b + 1));
           a = 0;
           b = 0;
@@ -97,6 +97,7 @@ function GetData()  {
       htmlArray = htmlArray.filter(n => n);
       //console.log(findByElement(findByElement(findByElement(htmlArray, "ul")[1], "li")[0], "a"));
       var searchResult = "/" + getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+      console.log(searchResult);
       document.innerHTML = searchResult;
       //document.getElementById("output").innerText += "\n" + loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), "stable");
       //document.getElementById("output").innerText = htmlArray;
