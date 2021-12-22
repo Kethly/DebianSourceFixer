@@ -1,5 +1,10 @@
 const queryString = window.location.search;
 console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+const package = urlParams.get('package');
+const suite = urlParams.get('suite');
+console.log(package);
+console.log(suite);
 function findByElement(arr, elem){
   if(!arr){
     return "";
