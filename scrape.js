@@ -87,7 +87,7 @@ function GetData()  {
       }
       htmlArray = htmlArray.filter(n => n);
       //console.log(findByElement(findByElement(findByElement(htmlArray, "ul")[1], "li")[0], "a"));
-      document.getElementById("output").innerText = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), "oldstable"), 'href="', '"');
+      document.getElementById("output").innerText = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), "oldstable")).split(" ")[0];
       document.getElementById("output").innerText += "\n" + loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), "stable");
       //document.getElementById("output").innerText = htmlArray;
       
