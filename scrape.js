@@ -1,4 +1,7 @@
 function findByElement(arr, elem){
+  if(!arr){
+    return [];
+  }
   var found = []; 
   var a = 0;
   var b = 0;
