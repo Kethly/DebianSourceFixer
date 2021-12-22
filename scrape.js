@@ -36,6 +36,7 @@ function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">"
         if(simple.charAt(index) === end && a != 0){
           b = index;
           console.log(index);
+          console.log(simple.slice(a + 1, b));
           c += (simple.slice(a + 1, b));
           a = 0;
           b = 0;
