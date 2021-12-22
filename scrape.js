@@ -88,7 +88,7 @@ function GetPackageURL()  {
       var test = window.location.replace("https://debianexactpackagesource.netlify.app/test.html");
       test.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
       
-      return searchResult;
+      //return searchResult;
     }
   }
 
