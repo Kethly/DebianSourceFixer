@@ -19,6 +19,27 @@ function findByElement(arr, elem){
       }
   return found;
 }
+function getInnerText(arr){
+  var simple = arr.join('');
+  console.log(simple)
+  var a = 0;
+  var b = 0;
+  var c = "";
+  for (let index = 0; index < simple.length; index++) {
+    if(simple.charAt(index) === ">" && a === 0){
+          a = index;
+          console.log(index);
+        }
+        if(simple.charAt(index) === "<" && a != 0){
+          b = index;
+          console.log(index);
+          c += (simple.slice(a + 1, b));
+          a = 0;
+          b = 0;
+        }
+  }
+  return c;
+}
 function GetData()  {
 //   fetch("//sources.debian.org/api/search/query", {mode:"cors"})
 //   .then(response => {
