@@ -69,10 +69,11 @@ function GetData()  {
 //     }
 //     return response.json();
 //   });
+  searchterm = "wireshark"
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("GET", "/api/search?keywords=bum&searchon=names&section=all&exact=1");
+  XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
   
   //XMLReq.setRequestHeader('access-control-allow-origin', '*');
   //XMLReq.setRequestHeader('access-control-request-method', 'GET');
@@ -87,7 +88,8 @@ function GetData()  {
       }
       htmlArray = htmlArray.filter(n => n);
       //console.log(findByElement(findByElement(findByElement(htmlArray, "ul")[1], "li")[0], "a"));
-      document.getElementById("output").innerText = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), "oldstable")).split(" ")[0];
+      var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), "oldstable")).split(" ")[0] + "/" + searchterm;
+      document.getElementById("output").innerText = searchResult;
       document.getElementById("output").innerText += "\n" + loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), "stable");
       //document.getElementById("output").innerText = htmlArray;
       
