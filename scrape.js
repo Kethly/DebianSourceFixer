@@ -97,8 +97,8 @@ function GetData()  {
       htmlArray = htmlArray.filter(n => n);
       //console.log(findByElement(findByElement(findByElement(htmlArray, "ul")[1], "li")[0], "a"));
       var searchResult = "/" + getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
-      document.getElementById("output").innerText = searchResult;
-      document.getElementById("output").innerText += "\n" + loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), "stable");
+      document.innerText = searchResult;
+      //document.getElementById("output").innerText += "\n" + loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), "stable");
       //document.getElementById("output").innerText = htmlArray;
       
     }
@@ -106,7 +106,7 @@ function GetData()  {
 
   XMLReq.send();
 }
-
+GetData();
 async function getData() {
   const response = await fetch('/api/search?keywords=bum&searchon=names&suite=stable&section=all');
   const data = await response.json();
