@@ -42,8 +42,14 @@ function getInnerText(arr){
   return c;
 }
 
-function loopSearchText(arr){
-
+function loopSearchForPackageType(arr, suite="stable"){
+  if (arr.length <= 1) { return arr[0]; }
+  for (let index = 0; index < arr.length; index++){
+    if(getInnerText(arr[index])).indexOf("(" + suite + ")") >= 0) {
+      return arr[index];
+    }
+  }
+  return arr[0];
 }
 
 function GetData()  {
