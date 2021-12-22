@@ -103,7 +103,8 @@ function GetPackageLink(link){
         htmlArray[index] = htmlArray[index].trim();
       }
       htmlArray = htmlArray.filter(n => n);
-      
+    }
+  }
 }
 GetPackageURL();
 async function getData() {
