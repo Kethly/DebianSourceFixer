@@ -52,7 +52,7 @@ function GetData()  {
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   //header('Access-Control-Allow-Origin: *');
-  XMLReq.open("GET", "/api/search?keywords=wireshark&searchon=names&section=all&exact=1");
+  XMLReq.open("GET", "/api/search?keywords=bum&searchon=names&section=all&exact=1");
   
   //XMLReq.setRequestHeader('access-control-allow-origin', '*');
   //XMLReq.setRequestHeader('access-control-request-method', 'GET');
@@ -67,7 +67,7 @@ function GetData()  {
       }
       htmlArray = htmlArray.filter(n => n);
       //console.log(findByElement(findByElement(findByElement(htmlArray, "ul")[1], "li")[0], "a"));
-      document.getElementById("output").innerText = findByElement(findByElement(htmlArray, "ul")[1], "li");
+      document.getElementById("output").innerText = getInnerText(findByElement(findByElement(htmlArray, "ul")[1], "li")[0]);
       //document.getElementById("output").innerText = htmlArray;
       
     }
