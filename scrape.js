@@ -31,7 +31,7 @@ function findByElement(arr, elem){
 }
 function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">", and end is typically "<"
   var simple = arr.join('');
-  console.log(simple)
+  //console.log(simple)
   var a = 0;
   var b = 0;
   var c = "";
