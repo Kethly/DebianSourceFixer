@@ -68,8 +68,8 @@ function loopSearchForPackageType(arr, suite="stable"){
 }
 
 function GetPackageURL()  {
-  searchterm = "bum"//spackage
-  suite = "stable"//ssuite
+  searchterm = "bum";//spackage
+  suite = "stable";//ssuite
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
