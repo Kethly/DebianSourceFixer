@@ -1,6 +1,6 @@
 function findByElement(arr, elem){
   if(!arr){
-    return [];
+    return "";
   }
   var found = []; 
   var a = 0;
@@ -23,6 +23,10 @@ function findByElement(arr, elem){
   return found;
 }
 function getInnerText(arr){
+   if(arr === ""){
+     console.log("nothing foundx1");
+    return "";
+  }
   var simple = arr.join('');
   console.log(simple)
   var a = 0;
@@ -46,6 +50,10 @@ function getInnerText(arr){
 }
 
 function loopSearchForPackageType(arr, suite="stable"){
+  if(arr === ""){
+    console.log("nothing foundx2");
+    return "";
+  }
   if (arr.length <= 1) { return arr[0]; }
   for (let index = 0; index < arr.length; index++){
     if(getInnerText(arr[index]).indexOf("(" + suite + ")") >= 0) {
