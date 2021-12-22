@@ -22,18 +22,18 @@ function findByElement(arr, elem){
       }
   return found;
 }
-function getInnerText(arr){
+function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">", and end is typically "<"
   var simple = arr.join('');
   console.log(simple)
   var a = 0;
   var b = 0;
   var c = "";
   for (let index = 0; index < simple.length; index++) {
-    if(simple.charAt(index) === ">" && a === 0){
+    if(simple.charAt(index) === initial && a === 0){
           a = index;
           console.log(index);
         }
-        if(simple.charAt(index) === "<" && a != 0){
+        if(simple.charAt(index) === end && a != 0){
           b = index;
           console.log(index);
           c += (simple.slice(a + 1, b));
