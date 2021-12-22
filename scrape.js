@@ -85,8 +85,8 @@ function GetPackageURL()  {
       var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
       document.getElementById("p").innerText = searchResult;
-      var test = window.open("/test.html");
-      test.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
+     // var test = window.open("/test.html");
+      //test.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
       
       //return searchResult;
     }
