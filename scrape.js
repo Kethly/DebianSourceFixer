@@ -1,3 +1,5 @@
+const queryString = window.location.search;
+console.log(queryString);
 function findByElement(arr, elem){
   if(!arr){
     return "";
