@@ -76,7 +76,7 @@ function GetData()  {
 //     }
 //     return response.json();
 //   });
-  searchterm = ppackage
+  searchterm = spackage
   suite = ssuite
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
