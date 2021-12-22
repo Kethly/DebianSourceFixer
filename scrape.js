@@ -84,7 +84,7 @@ function GetPackageURL()  {
       htmlArray = htmlArray.filter(n => n);
       var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
-      document.write(searchResult);
+      document.getElementById("p").innerText = searchResult;
       return searchResult;
     }
   }
