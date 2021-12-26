@@ -89,5 +89,5 @@ function loopSearchForPackageType(arr, suite="stable"){
   }
 
   XMLReq.send();
-  }
+  
 };
