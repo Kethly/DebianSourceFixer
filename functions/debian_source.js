@@ -81,14 +81,10 @@ function loopSearchForPackageType(arr, suite="stable"){
       htmlArray = htmlArray.filter(n => n);
       var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
-      return { statusCode: 200, body: "hello world!", };
-     // var test = window.open("/test.html");
-      //test.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
       
-      //return searchResult;
     }
   }
 
   XMLReq.send();
-  
+  return { statusCode: 200, body: "hello world!", };
 };
