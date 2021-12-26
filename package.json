@@ -1,8 +1,4 @@
 {
   "name": "Debian-Web-Scraper",
   "version": "1.0.0",
-  "dependencies": {
-    "request-promise": *,
-    "cheerio": *
-  }
 }
