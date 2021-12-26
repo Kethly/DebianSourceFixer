@@ -69,6 +69,7 @@ function loopSearchForPackageType(arr, suite="stable"){
   var suite = ssuite;
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
+  var searchResult = "";
   XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
   XMLReq.onreadystatechange = function() {
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
@@ -79,12 +80,12 @@ function loopSearchForPackageType(arr, suite="stable"){
         
       }
       htmlArray = htmlArray.filter(n => n);
-      var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+      searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
       
     }
   }
 
   XMLReq.send();
-  return { statusCode: 200, body: "hello world!", };
+  return { statusCode: 200, body: searchResult, };
 };
