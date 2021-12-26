@@ -1,6 +1,6 @@
   //const fetch = require("node-fetch");
   const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-  function findByElement(arr, elem){
+  async function findByElement(arr, elem){
   if(!arr){
     return "";
   }
@@ -24,7 +24,7 @@
       }
   return found;
 }
-function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">", and end is typically "<"
+async function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">", and end is typically "<"
   var simple = arr.join('');
   //console.log(simple)
   var a = 0;
@@ -45,7 +45,7 @@ function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">"
   return c;
 }
 
-function loopSearchForPackageType(arr, suite="stable"){
+async function loopSearchForPackageType(arr, suite="stable"){
   if(suite === null){
     suite = "stable";
   }
@@ -80,7 +80,7 @@ function loopSearchForPackageType(arr, suite="stable"){
         
       }
       htmlArray = htmlArray.filter(n => n);
-      searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+      searchResult = await getInnerText(await loopSearchForPackageType(await findByElement(await findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
       
     }
