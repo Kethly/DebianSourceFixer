@@ -1,4 +1,5 @@
   //const fetch = require("node-fetch");
+  const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   function findByElement(arr, elem){
   if(!arr){
     return "";
