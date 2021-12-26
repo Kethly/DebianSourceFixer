@@ -1,4 +1,4 @@
-
+  const fetch = require("node-fetch");
   exports.handler = async (event, context) => {
   const searchterm = event.queryStringParameters.searchterm;
   const API_ENDPOINT = '/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1';
