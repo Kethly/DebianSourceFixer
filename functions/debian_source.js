@@ -61,6 +61,11 @@
   }
   return arr[0];
 }
+function getoneplustwo(){
+const one = event.queryStringParameters.one;
+const two = event.queryStringParameters.two;
+return one + two;
+}
   
   exports.handler = async (event, context) => {
   const spackage = event.queryStringParameters.package;
@@ -87,5 +92,5 @@
   }
 
   XMLReq.send();
-  return { statusCode: 200, body: searchResult, };
+  return { statusCode: 200, body: getoneplustwo(), };
 };
