@@ -1,7 +1,7 @@
   //const fetch = require("node-fetch");
   const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   const fetch = require('node-fetch');
-  function findByElement(arr, elem){
+  function findByElement(arr, elem, extra = ""){ //extra is an alternative end
   if(!arr){
     return "";
   }
@@ -14,7 +14,7 @@
           a = index;
           //console.log(index);
         }
-        if(arr[index].indexOf("</" + elem + ">") >= 0){
+        if(arr[index].indexOf("</" + elem + ">") >= 0 || arr[index].indexOf("</" + extra + ">") >= 0){
           b = index;
           //console.log(index);
           found.push(arr.slice(a, b + 1));
@@ -82,6 +82,6 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
-  searchResult = findByElement(htmlArray, 'div');
+  searchResult = findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
   return { statusCode: 200, body: JSON.stringify(searchResult), };
 };
