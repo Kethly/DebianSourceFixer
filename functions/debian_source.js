@@ -114,5 +114,5 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   
   }
   searchResult = mirrors.join('\n');
-  return { statusCode: 200, body: JSON.stringify(searchResult), };
+  return { statusCode: 200, body: searchResult, };
 };
