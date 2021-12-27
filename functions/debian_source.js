@@ -27,7 +27,6 @@
 }
   function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">", and end is typically "<"
   var simple = arr.join('');
-  //console.log(simple)
   var a = 0;
   var b = 0;
   var c = "";
@@ -80,8 +79,8 @@ return one + two;
         htmlArray[index] = htmlArray[index].trim();      
   }
   htmlArray = htmlArray.filter(n => n);
-  var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
-  return { statusCode: 200, body: data, };
+  //var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+  return { statusCode: 200, body: typeof htmlArray, };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
