@@ -73,7 +73,7 @@ return one + two;
   const ssuite = event.queryStringParameters.suite;
   var searchterm = spackage;
   var suite = ssuite;
-  var response = await fetch("https://explorers.netlify.com/learn/up-and-running-with-serverless-functions/integrate-with-a-third-party-api-with-serverless-functions");
+  var response = await fetch("/api/stretch/bum");
   var data = await response.text();
   return { statusCode: 200, body: JSON.stringify(data), };
   var XMLReq = new XMLHttpRequest();
