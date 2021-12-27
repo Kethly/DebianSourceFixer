@@ -74,7 +74,7 @@ return one + two;
   var searchterm = spackage;
   var suite = ssuite;
   var response = await fetch("https://cat-fact.herokuapp.com/facts");
-  return { statusCode: 200, body: response.text(), };
+  return { statusCode: 200, body: JSON.stringify(response.text()), };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   var searchResult = "hi";
