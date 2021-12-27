@@ -80,7 +80,7 @@ return one + two;
         htmlArray[index] = htmlArray[index].trim();      
   }
   htmlArray = htmlArray.filter(n => n);
-  var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+  //var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   return { statusCode: 200, body: data, };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
