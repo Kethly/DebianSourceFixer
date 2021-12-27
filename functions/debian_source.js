@@ -94,6 +94,6 @@ return one + two;
     }
   }
 
-  XMLReq.send().then() => ;
+  XMLReq.send();
   
 };
