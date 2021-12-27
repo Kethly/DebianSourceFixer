@@ -69,7 +69,6 @@
     console.log("nothing was found.  If you're reading this, maybe the package you were looking for isn't here or doesn't exist?  Check your search words again.");
     return "";
   }
-  if (arr.length <= 1) { return arr[-1]; }
   for (let index = 0; index < arr.length; index++){
     if(getInnerText(arr[index]).indexOf(arch) >= 0 && getInnerText(arr[index]).length === arch.length) {
       return arr[index];
