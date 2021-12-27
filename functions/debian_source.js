@@ -78,13 +78,13 @@ return one + two;
   var response = await fetch("https://packages.debian.org/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
   var data = await response.text();
   var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
-//   for (let index = 0; index < htmlArray.length; index++) {
-//         htmlArray[index] = htmlArray[index].trim();      
-//   }
-  //htmlArray = htmlArray.filter(n => n);
-  //var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+  for (let index = 0; index < htmlArray.length; index++) {
+        htmlArray[index] = htmlArray[index].trim();      
+  }
+  htmlArray = htmlArray.filter(n => n);
+  var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   var test = ["hi", "there", "hello"];
-  return { statusCode: 200, body: JSON.stringify(typeof htmlArray), };
+  return { statusCode: 200, body: JSON.stringify(htmlArray), };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
