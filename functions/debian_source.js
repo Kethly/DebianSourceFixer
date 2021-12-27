@@ -26,10 +26,7 @@
   return found;
 }
   function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">", and end is typically "<"
-  var simple = "";
-  for (let index = 0; index < arr.length; index++) {
-    simple += arr[index].toString();
-  }
+  var simple = arr.join('');
   var a = 0;
   var b = 0;
   var c = "";
