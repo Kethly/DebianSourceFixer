@@ -75,7 +75,7 @@ return one + two;
   var suite = ssuite;
   var response = await fetch("https://packages.debian.org/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
   var data = await response.text();
-  var htmlArray = response.text().split("\n");
+  var htmlArray = data.toString().split("\n");
   for (let index = 0; index < htmlArray.length; index++) {
         htmlArray[index] = htmlArray[index].trim();      
   }
