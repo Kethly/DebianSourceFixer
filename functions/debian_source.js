@@ -105,13 +105,14 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   htmlArray = clean_up_html(data);
   //searchResult = findByElement(htmlArray, 'th')
   searchResult += "/" + getInnerText(loopSearchForArchType(findByElement(htmlArray, 'th'), arch)) + "/download";//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
-//   var mirrorlinks = await fetch("https://packages.debian.org/" + searchResult);
-//   data = await mirrorlinks.text();
-//   htmlArray = clean_up_html(data);
-//   var mirrors = findByElement(htmlArray, 'pre');
-//   for (let index = 0; index < mirrors.length; index++){
-//     mirrors[index] = getInnerText(mirrors[index]);
-//   }
-//   searchResult = mirrors;
+  var mirrorlinks = await fetch("https://packages.debian.org/" + searchResult);
+  data = await mirrorlinks.text();
+  htmlArray = clean_up_html(data);
+  var mirrors = findByElement(htmlArray, 'pre');
+  for (let index = 0; index < mirrors.length; index++){
+    mirrors[index] = getInnerText(mirrors[index]);
+  
+  }
+  searchResult = mirrors.join('\n');
   return { statusCode: 200, body: JSON.stringify(searchResult), };
 };
