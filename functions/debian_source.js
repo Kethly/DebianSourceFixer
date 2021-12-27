@@ -103,7 +103,7 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
-  searchResult += getInnerText(loopSearchForArchType(findByElement(htmlArray, 'th'), arch)) + "/download";//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
-  
+  searchResult += "/" + getInnerText(loopSearchForArchType(findByElement(htmlArray, 'th'), arch)) + "/download";//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
+  //var mirrorlinks = await fetch("https://packages.debian.org/" + searchResult);
   return { statusCode: 200, body: JSON.stringify(searchResult), };
 };
