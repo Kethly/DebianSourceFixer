@@ -92,5 +92,5 @@ return one + two;
   }
 
   XMLReq.send();
-  return { statusCode: 200, body: getoneplustwo(), };
+  return { statusCode: 200, body: htmlArray, };
 };
