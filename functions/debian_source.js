@@ -14,7 +14,7 @@
           a = index;
           //console.log(index);
         }
-        if(arr[index].indexOf("</" + elem + ">") >= 0 || arr[index].indexOf("</" + extra + ">") >= 0){
+        if((arr[index].indexOf("</" + elem + ">") >= 0 || arr[index].indexOf("</" + extra + ">") >= 0) && a != 0){
           b = index;
           //console.log(index);
           found.push(arr.slice(a, b + 1));
