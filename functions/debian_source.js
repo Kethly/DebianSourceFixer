@@ -83,6 +83,7 @@ return one + two;
   }
   htmlArray = htmlArray.filter(n => n);
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+  var test = ["hi", "there", "hello"];
   return { statusCode: 200, body: JSON.stringify(htmlArray), };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
