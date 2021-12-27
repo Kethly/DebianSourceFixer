@@ -107,7 +107,7 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   var mirrorlinks = await fetch("https://packages.debian.org/" + searchResult);
   data = await mirrorlinks.text();
   htmlArray = clean_up_html(data);
-  var mirrors = htmlArray;
+  var mirrors = findByElement(htmlArray, 'pre');
   for (let index = 0; index < mirrors.length; index++){
     mirrors[index] = getInnerText(mirrors[index]);
   }
