@@ -82,6 +82,6 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
-  searchResult = htmlArray;//findByElement(htmlArray, 'div id=\"pdownload\"');
+  searchResult = findByElement(htmlArray, 'div id=\"pdownload\"');
   return { statusCode: 200, body: JSON.stringify(searchResult), };
 };
