@@ -61,6 +61,22 @@
   }
   return arr[0];
 }
+ function loopSearchForArchType(arr, suite="all"){
+  if(suite === null){
+    suite = "all";
+  }
+  if(arr === ""){
+    console.log("nothing was found.  If you're reading this, maybe the package you were looking for isn't here or doesn't exist?  Check your search words again.");
+    return "";
+  }
+  if (arr.length <= 1) { return arr[0]; }
+  for (let index = 0; index < arr.length; index++){
+    if(getInnerText(arr[index]).indexOf("(" + suite + ")") >= 0) {
+      return arr[index];
+    }
+  }
+  return arr[0];
+}
 function clean_up_html(data){
 var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   for (let index = 0; index < htmlArray.length; index++) {
@@ -72,6 +88,7 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   exports.handler = async (event, context) => {
   const spackage = event.queryStringParameters.package;
   const ssuite = event.queryStringParameters.suite;
+  const arch = event.queryStringParameters.arch;
   var searchterm = spackage;
   var suite = ssuite;
   var response = await fetch("https://packages.debian.org/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
@@ -82,6 +99,6 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
-  searchResult = findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
+  searchResult = findByElement(htmlArray, 'tr');//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
   return { statusCode: 200, body: JSON.stringify(searchResult), };
 };
