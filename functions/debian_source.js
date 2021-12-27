@@ -79,7 +79,7 @@
       return arr[index];
     }
   }
-  return arr[4];
+  return arr[5];
 }
 function clean_up_html(data){
 var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
