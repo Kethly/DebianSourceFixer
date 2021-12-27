@@ -79,7 +79,7 @@
       return arr[index];
     }
   }
-  return arr[5];
+  return arr[4];
 }
 function clean_up_html(data){
 var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
@@ -103,7 +103,7 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
-  searchResult = findByElement(htmlArray, 'th')
+  //searchResult = findByElement(htmlArray, 'th')
   searchResult += "/" + getInnerText(loopSearchForArchType(findByElement(htmlArray, 'th'), arch)) + "/download";//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
   var mirrorlinks = await fetch("https://packages.debian.org/" + searchResult);
   data = await mirrorlinks.text();
