@@ -85,21 +85,4 @@ return one + two;
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   var test = ["hi", "there", "hello"];
   return { statusCode: 200, body: searchResult, };
-  var XMLReq = new XMLHttpRequest();
-  var htmlArray = [];
-  XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
-  XMLReq.onreadystatechange = function() {
-    if(XMLReq.readyState == 4 && XMLReq.status == 200) {
-      //console.log(XMLReq.responseText);
-      htmlArray = XMLReq.responseText.split("\n")
-      
-      
-      searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
-      console.log(searchResult);
-      
-    }
-  }
-
-  XMLReq.send();
-  
 };
