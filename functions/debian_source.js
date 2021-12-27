@@ -87,10 +87,10 @@ return one + two;
       htmlArray = htmlArray.filter(n => n);
       searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
-      
+      return { statusCode: 200, body: htmlArray[0], };
     }
   }
 
   XMLReq.send();
-  return { statusCode: 200, body: htmlArray[0], };
+  
 };
