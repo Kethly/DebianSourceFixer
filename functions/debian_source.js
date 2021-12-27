@@ -71,12 +71,12 @@
   }
   if (arr.length <= 1) { return arr[-1]; }
   for (let index = 0; index < arr.length; index++){
-    if(getInnerText(arr[index]).indexOf(arch) >= 0) {
+    if(getInnerText(arr[index]).indexOf(arch) >= 0 && getInnerText(arr[index]).length === arch.length) {
       return arr[index];
     }
   }
   for (let index = 0; index < arr.length; index++){
-    if(getInnerText(arr[index]).indexOf("all") >= 0) {
+    if(getInnerText(arr[index]).indexOf("all") >= 0 && getInnerText(arr[index]).length === "all".length) {
       return arr[index];
     }
   }
