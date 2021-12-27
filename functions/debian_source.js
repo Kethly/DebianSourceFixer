@@ -75,6 +75,11 @@
       return arr[index];
     }
   }
+  for (let index = 0; index < arr.length; index++){
+    if(getInnerText(arr[index]).indexOf("all") >= 0) {
+      return arr[index];
+    }
+  }
   return arr[-1];
 }
 function clean_up_html(data){
