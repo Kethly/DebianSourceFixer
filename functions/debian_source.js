@@ -73,9 +73,15 @@ return one + two;
   const ssuite = event.queryStringParameters.suite;
   var searchterm = spackage;
   var suite = ssuite;
-  var response = await fetch("https://packages.debian.org/stretch/bum");
+  var response = await fetch("https://packages.debian.org/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
   var data = await response.text();
-  return { statusCode: 200, body: JSON.stringify(data), };
+  var htmlArray = response.text().split("\n");
+  for (let index = 0; index < htmlArray.length; index++) {
+        htmlArray[index] = htmlArray[index].trim();      
+  }
+  htmlArray = htmlArray.filter(n => n);
+  var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+  return { statusCode: 200, body: data, };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
   var searchResult = "hi";
@@ -84,11 +90,8 @@ return one + two;
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
       //console.log(XMLReq.responseText);
       htmlArray = XMLReq.responseText.split("\n")
-      for (let index = 0; index < htmlArray.length; index++) {
-        htmlArray[index] = htmlArray[index].trim();
-        
-      }
-      htmlArray = htmlArray.filter(n => n);
+      
+      
       searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
       
