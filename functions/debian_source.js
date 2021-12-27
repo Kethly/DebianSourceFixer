@@ -64,7 +64,7 @@
 function clean_up_html(data){
 var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   for (let index = 0; index < htmlArray.length; index++) {
-        htmlArray[index] = htmlArray[index].trim();      
+        htmlArray[index] = htmlArray[index].toString().trim();      
   }
   htmlArray = htmlArray.filter(n => n);
   return htmlArray
