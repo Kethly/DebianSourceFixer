@@ -73,7 +73,7 @@ return one + two;
   const ssuite = event.queryStringParameters.suite;
   var searchterm = spackage;
   var suite = ssuite;
-  var response = await fetch("https://cat-fact.herokuapp.com/facts");
+  var response = await fetch("https://explorers.netlify.com/learn/up-and-running-with-serverless-functions/integrate-with-a-third-party-api-with-serverless-functions");
   return { statusCode: 200, body: JSON.stringify(response.text()), };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
