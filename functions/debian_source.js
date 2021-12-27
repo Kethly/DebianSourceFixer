@@ -77,5 +77,7 @@
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   var test = ["hi", "there", "hello"];
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
-  return { statusCode: 200, body: JSON.stringify(packageDownload), };
+  data = await packageDownload.text();
+  
+  return { statusCode: 200, body: JSON.stringify(data), };
 };
