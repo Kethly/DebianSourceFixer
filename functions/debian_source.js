@@ -61,9 +61,9 @@
   }
   return arr[0];
 }
- function loopSearchForArchType(arr, suite="all"){
-  if(suite === null){
-    suite = "all";
+ function loopSearchForArchType(arr, arch="all"){
+  if(arch === null){
+    arch = "all";
   }
   if(arr === ""){
     console.log("nothing was found.  If you're reading this, maybe the package you were looking for isn't here or doesn't exist?  Check your search words again.");
@@ -71,11 +71,11 @@
   }
   if (arr.length <= 1) { return arr[0]; }
   for (let index = 0; index < arr.length; index++){
-    if(getInnerText(arr[index]).indexOf("(" + suite + ")") >= 0) {
+    if(getInnerText(arr[index]).indexOf(arch) >= 0) {
       return arr[index];
     }
   }
-  return arr[0];
+  return arr[-1];
 }
 function clean_up_html(data){
 var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
@@ -99,6 +99,6 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
-  searchResult = findByElement(htmlArray, 'tr');//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
+  searchResult = getInnerText(loopSearchForArchType(findByElement(htmlArray, 'tr'), "amd64"));//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
   return { statusCode: 200, body: JSON.stringify(searchResult), };
 };
