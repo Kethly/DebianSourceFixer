@@ -99,6 +99,6 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
-  searchResult = loopSearchForArchType(findByElement(htmlArray, 'tr'), "amd64");//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
+  searchResult = loopSearchForArchType(findByElement(htmlArray, 'th'), "amd64");//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
   return { statusCode: 200, body: JSON.stringify(searchResult), };
 };
