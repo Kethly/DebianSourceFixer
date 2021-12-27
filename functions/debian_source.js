@@ -80,11 +80,10 @@ return one + two;
         htmlArray[index] = htmlArray[index].trim();      
   }
   htmlArray = htmlArray.filter(n => n);
-  //var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+  var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   return { statusCode: 200, body: data, };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
-  var searchResult = "hi";
   XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
   XMLReq.onreadystatechange = function() {
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
