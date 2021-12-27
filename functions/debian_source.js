@@ -64,11 +64,6 @@
   }
   return arr[0];
 }
-function getoneplustwo(){
-const one = event.queryStringParameters.one;
-const two = event.queryStringParameters.two;
-return one + two;
-}
   
   exports.handler = async (event, context) => {
   const spackage = event.queryStringParameters.package;
