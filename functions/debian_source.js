@@ -73,7 +73,7 @@ return one + two;
   const ssuite = event.queryStringParameters.suite;
   var searchterm = spackage;
   var suite = ssuite;
-  var response = await fetch("/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
+  var response = await fetch("https://cat-fact.herokuapp.com/facts");
   return { statusCode: 200, body: response.text(), };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
