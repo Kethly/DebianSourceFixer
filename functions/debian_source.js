@@ -72,9 +72,11 @@ return one + two;
   const ssuite = event.queryStringParameters.suite;
   var searchterm = spackage;
   var suite = ssuite;
+  var response = await fetch("/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
+  return { statusCode: 200, body: response.text(), };
   var XMLReq = new XMLHttpRequest();
   var htmlArray = [];
-  var searchResult = "";
+  var searchResult = "hi";
   XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
   XMLReq.onreadystatechange = function() {
     if(XMLReq.readyState == 4 && XMLReq.status == 200) {
@@ -87,10 +89,10 @@ return one + two;
       htmlArray = htmlArray.filter(n => n);
       searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
       console.log(searchResult);
-      return { statusCode: 200, body: htmlArray[0], };
+      
     }
   }
 
-  XMLReq.send();
+  XMLReq.send().then() => ;
   
 };
