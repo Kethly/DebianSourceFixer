@@ -92,5 +92,5 @@ return one + two;
   }
 
   XMLReq.send();
-  return { statusCode: 200, body: htmlArray, };
+  return { statusCode: 200, body: htmlArray[0], };
 };
