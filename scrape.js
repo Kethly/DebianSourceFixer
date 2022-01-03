@@ -114,7 +114,6 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   return htmlArray
 }
 async function getmirror(){
-const arch = event.queryStringParameters.arch;
   var searchterm = spackage;
   var suite = ssuite;
   var response = await fetch("https://packages.debian.org/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
