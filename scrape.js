@@ -120,7 +120,6 @@ async function getmirror(){
   var data = await response.text();
   var htmlArray = clean_up_html(data);
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
-  var test = ["hi", "there", "hello"];
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
@@ -135,53 +134,6 @@ async function getmirror(){
   
   }
   searchResult = mirrors.join('\n');
-  return searchResult;
+  return searchResult; //("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
 }
-function GetPackageURL()  {
-  var searchterm = spackage;
-  var suite = ssuite;
-  var XMLReq = new XMLHttpRequest();
-  var htmlArray = [];
-  XMLReq.open("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
-  XMLReq.onreadystatechange = function() {
-    if(XMLReq.readyState == 4 && XMLReq.status == 200) {
-      //console.log(XMLReq.responseText);
-      htmlArray = XMLReq.responseText.split("\n")
-      for (let index = 0; index < htmlArray.length; index++) {
-        htmlArray[index] = htmlArray[index].trim();
-        
-      }
-      htmlArray = htmlArray.filter(n => n);
-      var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
-      console.log(searchResult);
-      document.write(searchResult);
-     // var test = window.open("/test.html");
-      //test.document.write("<html><head><title>MyTitle</title></head><body>test</body></html>");
-      
-      //return searchResult;
-    }
-  }
 
-  XMLReq.send();
-}
-function GetPackageLink(link){
-  var XMLReq = new XMLHttpRequest();
-  var htmlArray = [];
-  XMLReq.open("GET", "/api/" + link);
-  XMLReq.onreadystatechange = function() {
-    if(XMLReq.readyState == 4 && XMLReq.status == 200) {
-      //console.log(XMLReq.responseText);
-      htmlArray = XMLReq.responseText.split("\n")
-      for (let index = 0; index < htmlArray.length; index++) {
-        htmlArray[index] = htmlArray[index].trim();
-      }
-      htmlArray = htmlArray.filter(n => n);
-    }
-  }
-}
-GetPackageURL();
-async function getData() {
-  const response = await fetch('/api/search?keywords=bum&searchon=names&suite=stable&section=all');
-  const data = await response.json();
-  console.log(data);
-}
