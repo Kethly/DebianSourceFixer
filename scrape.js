@@ -3,6 +3,7 @@ console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 const spackage = urlParams.get('package');
 const ssuite = urlParams.get('suite');
+const arch = urlParams.get('arch');
 console.log(spackage);
 console.log(ssuite);
 function findByElement(arr, elem){
@@ -111,6 +112,31 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   }
   htmlArray = htmlArray.filter(n => n);
   return htmlArray
+}
+function getmirror(){
+const arch = event.queryStringParameters.arch;
+  var searchterm = spackage;
+  var suite = ssuite;
+  var response = await fetch("https://packages.debian.org/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
+  var data = await response.text();
+  var htmlArray = clean_up_html(data);
+  var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+  var test = ["hi", "there", "hello"];
+  var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
+  data = await packageDownload.text();
+  htmlArray = clean_up_html(data);
+  //searchResult = findByElement(htmlArray, 'th')
+  searchResult += "/" + getInnerText(loopSearchForArchType(findByElement(htmlArray, 'th'), arch)) + "/download";//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
+  var mirrorlinks = await fetch("https://packages.debian.org/" + searchResult);
+  data = await mirrorlinks.text();
+  htmlArray = clean_up_html(data);
+  var mirrors = findByElement(htmlArray, 'pre');
+  for (let index = 0; index < mirrors.length; index++){
+    mirrors[index] = getInnerText(mirrors[index]);
+  
+  }
+  searchResult = mirrors.join('\n');
+  return searchResult;
 }
 function GetPackageURL()  {
   var searchterm = spackage;
