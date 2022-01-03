@@ -98,15 +98,11 @@ async function getmirror(){
   var searchterm = spackage;
   var suite = ssuite;
   var response = await fetch(`/api/search?keywords=${searchterm}&searchon=names&section=all&exact=1`);
- 
   var data = await response.text();
   var htmlArray = clean_up_html(data);
-  document.body.innerText = htmlArray;
-  //var searchResult = findByElement(htmlArray, "ul");
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   document.body.innerText = searchResult;
   var packageDownload = await fetch(`/api/${searchResult}`);
-  
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
   //searchResult = findByElement(htmlArray, 'th')
@@ -122,6 +118,7 @@ async function getmirror(){
   }
   searchResult = mirrors.join('\n');
   console.log(searchResult);
-  return searchResult; //("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
+  return searchResult;
 }
-getmirror();
+
+document.body.innerText = getmirror();
