@@ -102,7 +102,8 @@ async function getmirror(){
   var data = await response.text();
   var htmlArray = clean_up_html(data);
   document.body.innerText = htmlArray;
-  var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+  var searchResult = findByElement(findByElement(htmlArray, "ul")[1], "li");
+  //var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   console.log(searchResult);
   var packageDownload = await fetch("/api/" + searchResult);
   
