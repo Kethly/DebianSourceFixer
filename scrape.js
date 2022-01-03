@@ -17,11 +17,9 @@ function findByElement(arr, elem, extra = ""){ //extra is an alternative end
 
         if(arr[index].indexOf("<" + elem + ">") >= 0 || arr[index].indexOf("<" + elem) >= 0){
           a = index;
-          //console.log(index);
         }
         if((arr[index].indexOf("</" + elem + ">") >= 0 || arr[index].indexOf("</" + extra + ">") >= 0) && a != 0){
           b = index;
-          //console.log(index);
           found.push(arr.slice(a, b + 1));
           a = 0;
           b = 0;
@@ -101,13 +99,11 @@ async function getmirror(){
   var data = await response.text();
   var htmlArray = clean_up_html(data);
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
-  document.body.innerText = searchResult;
   var packageDownload = await fetch(`/api/${searchResult}`);
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
   //searchResult = findByElement(htmlArray, 'th')
   searchResult += "/" + getInnerText(loopSearchForArchType(findByElement(htmlArray, 'th'), arch)) + "/download";//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
-  console.log(searchResult);
   var mirrorlinks = await fetch(`/api/${searchResult}`);
   data = await mirrorlinks.text();
   htmlArray = clean_up_html(data);
@@ -117,8 +113,9 @@ async function getmirror(){
   
   }
   searchResult = mirrors.join('\n');
-  console.log(searchResult);
+  document.body.innerText = searchResult;
   return searchResult;
+  
 }
+getmirror();
 
-document.body.innerText = getmirror();
