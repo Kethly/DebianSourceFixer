@@ -105,14 +105,14 @@ async function getmirror(){
   var searchResult = findByElement(htmlArray, "ul");
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   document.body.innerText = data;
-  var packageDownload = await fetch("/api/" + searchResult);
+  var packageDownload = await fetch(`/api/${searchResult}`);
   
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
   //searchResult = findByElement(htmlArray, 'th')
   searchResult += "/" + getInnerText(loopSearchForArchType(findByElement(htmlArray, 'th'), arch)) + "/download";//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
   console.log(searchResult);
-  var mirrorlinks = await fetch("/api/" + searchResult);
+  var mirrorlinks = await fetch(`/api/${searchResult}`);
   data = await mirrorlinks.text();
   htmlArray = clean_up_html(data);
   var mirrors = findByElement(htmlArray, 'pre');
