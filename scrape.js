@@ -101,7 +101,7 @@ async function getmirror(){
  
   var data = await response.text();
   var htmlArray = clean_up_html(data);
-  document.getElementById("p").innerText = htmlArray;
+  document.body.innerText = htmlArray;
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
