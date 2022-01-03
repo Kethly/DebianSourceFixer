@@ -122,6 +122,6 @@ async function getmirror(){
 //   }
 //   searchResult = mirrors.join('\n');
 //   console.log(searchResult);
-//   return searchResult; //("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
+  return searchResult; //("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
 }
 getmirror();
