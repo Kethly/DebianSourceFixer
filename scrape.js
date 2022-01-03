@@ -6,25 +6,6 @@ const ssuite = urlParams.get('suite');
 const arch = urlParams.get('arch');
 console.log(spackage);
 console.log(ssuite);
-function findByElement(arr, elem){
-  if(!arr){
-    return "";
-  }
-  var found = []; 
-  var a = 0;
-  var b = 0;
-  for (let index = 0; index < arr.length; index++) {
-
-        if(arr[index].indexOf("<" + elem + ">") >= 0 || arr[index].indexOf("<" + elem) >= 0){
-          a = index;
-          //console.log(index);
-        }
-        if(arr[index].indexOf("</" + elem + ">") >= 0){
-          b = index;
-          //console.log(index);
-          found.push(arr.slice(a, b + 1));
-          a = 0;
-          b = 0;
 function findByElement(arr, elem, extra = ""){ //extra is an alternative end
   if(!arr){
     return "";
