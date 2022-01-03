@@ -97,7 +97,7 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
 async function getmirror(){
   var searchterm = spackage;
   var suite = ssuite;
-  var response = await fetch("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
+  var response = await fetch('/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1');
   var data = await response.text();
   var htmlArray = clean_up_html(data);
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
