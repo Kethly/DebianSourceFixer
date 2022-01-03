@@ -103,11 +103,14 @@ async function getmirror(){
   var htmlArray = clean_up_html(data);
   document.body.innerText = htmlArray;
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
+  console.log(searchResult);
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
+  
   data = await packageDownload.text();
   htmlArray = clean_up_html(data);
   //searchResult = findByElement(htmlArray, 'th')
   searchResult += "/" + getInnerText(loopSearchForArchType(findByElement(htmlArray, 'th'), arch)) + "/download";//findByElement(htmlArray, 'div id=\"pdownload\"', 'div');
+  console.log(searchResult);
   var mirrorlinks = await fetch("https://packages.debian.org/" + searchResult);
   data = await mirrorlinks.text();
   htmlArray = clean_up_html(data);
@@ -117,6 +120,7 @@ async function getmirror(){
   
   }
   searchResult = mirrors.join('\n');
+  console.log(searchResult);
   return searchResult; //("GET", "/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1");
 }
 getmirror();
