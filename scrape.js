@@ -113,7 +113,7 @@ var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
   htmlArray = htmlArray.filter(n => n);
   return htmlArray
 }
-function getmirror(){
+async function getmirror(){
 const arch = event.queryStringParameters.arch;
   var searchterm = spackage;
   var suite = ssuite;
