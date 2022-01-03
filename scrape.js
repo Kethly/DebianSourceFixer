@@ -24,14 +24,32 @@ function findByElement(arr, elem){
           found.push(arr.slice(a, b + 1));
           a = 0;
           b = 0;
+function findByElement(arr, elem, extra = ""){ //extra is an alternative end
+  if(!arr){
+    return "";
+  }
+  var found = []; 
+  var a = 0;
+  var b = 0;
+  for (let index = 0; index < arr.length; index++) {
+
+        if(arr[index].indexOf("<" + elem + ">") >= 0 || arr[index].indexOf("<" + elem) >= 0){
+          a = index;
+          //console.log(index);
+        }
+        if((arr[index].indexOf("</" + elem + ">") >= 0 || arr[index].indexOf("</" + extra + ">") >= 0) && a != 0){
+          b = index;
+          //console.log(index);
+          found.push(arr.slice(a, b + 1));
+          a = 0;
+          b = 0;
         }
  
       }
   return found;
 }
-function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">", and end is typically "<"
+  function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">", and end is typically "<"
   var simple = arr.join('');
-  //console.log(simple)
   var a = 0;
   var b = 0;
   var c = "";
@@ -50,7 +68,7 @@ function getInnerText(arr, initial = ">", end = "<"){ //initial is typically ">"
   return c;
 }
 
-function loopSearchForPackageType(arr, suite="stable"){
+  function loopSearchForPackageType(arr, suite="stable"){
   if(suite === null){
     suite = "stable";
   }
@@ -66,7 +84,34 @@ function loopSearchForPackageType(arr, suite="stable"){
   }
   return arr[0];
 }
-
+ function loopSearchForArchType(arr, arch="all"){
+  if(arch === null){
+    arch = "all";
+  }
+  if(arr === ""){
+    console.log("nothing was found.  If you're reading this, maybe the package you were looking for isn't here or doesn't exist?  Check your search words again.");
+    return "";
+  }
+  for (let index = 0; index < arr.length; index++){
+    if(getInnerText(arr[index]).indexOf(arch) >= 0 && getInnerText(arr[index]).length === arch.length) {
+      return arr[index];
+    }
+  }
+  for (let index = 0; index < arr.length; index++){
+    if(getInnerText(arr[index]).indexOf("all") >= 0 && getInnerText(arr[index]).length === "all".length) {
+      return arr[index];
+    }
+  }
+  return arr[4];
+}
+function clean_up_html(data){
+var htmlArray = data.split("\n"); //JSON.stringify(data).split("\n");
+  for (let index = 0; index < htmlArray.length; index++) {
+        htmlArray[index] = htmlArray[index].toString().trim();      
+  }
+  htmlArray = htmlArray.filter(n => n);
+  return htmlArray
+}
 function GetPackageURL()  {
   var searchterm = spackage;
   var suite = ssuite;
