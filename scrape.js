@@ -98,8 +98,10 @@ async function getmirror(){
   var searchterm = spackage;
   var suite = ssuite;
   var response = await fetch('/api/search?keywords=" + searchterm + "&searchon=names&section=all&exact=1');
+ 
   var data = await response.text();
   var htmlArray = clean_up_html(data);
+   document.innerHTML = htmlArray;
   var searchResult = getInnerText(loopSearchForPackageType(findByElement(findByElement(htmlArray, "ul")[1], "li"), suite)).split(" ")[0] + "/" + searchterm;
   var packageDownload = await fetch("https://packages.debian.org/" + searchResult);
   data = await packageDownload.text();
