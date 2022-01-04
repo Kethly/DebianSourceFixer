@@ -1,9 +1,12 @@
 body {
-  background-color: powderblue;
+  display: block;
+  background-color: black;
 }
 h1 {
-  color: blue;
+  color: white;
 }
 p {
   color: red;
+  font-weight: bold;
+  font-family: Courier New, monospace;
 }
