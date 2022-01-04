@@ -1,14 +1,18 @@
 <script src="scrape.js"></script>
 <link rel="stylesheet" href="index.css">
 <h1>Debian Source Search for Exact Package Names</h1>
+<div id="options">
 <p>
-  package: <input type="package" name="packagename">
+  PACKAGE: 
 </p>
+  <input type="package" name="packagename">
 <p>
-  suite: <input type="suite" name="suitename">
+  SUITE: 
 </p>
+  <input type="suite" name="suitename">
 <p>
-  arch: <input type="arch" name="archname">
+  ARCH: 
 </p>
+  <input type="arch" name="archname">
+</div>
 <button onClick=redirect()>press to get</button>
-<p id="output"></p>
