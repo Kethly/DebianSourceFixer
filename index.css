@@ -1,12 +1,33 @@
 body {
   display: block;
   background-color: black;
+  font-family: Courier New, monospace;
+  font-weight: 100;
+}
+#options{
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width:30%;
+  display:grid;
+  grid-template-columns: 1fr 1.8fr;
+}
+p{
+  color: lightgreen;
+  border-radius: 5px;
+  padding-left: 20%;
+
+}
+input{
+  margin-top: auto;
+  margin-bottom:auto;
+  padding-left: 5%;
+  width: 80%;
+  height: 50%;
 }
 h1 {
-  color: white;
-}
-p {
-  color: red;
-  font-weight: bold;
-  font-family: Courier New, monospace;
+  text-align: center;
+  color: lightgreen;
+  font-weight: 100;
 }
