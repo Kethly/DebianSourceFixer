@@ -20,14 +20,41 @@ p{
 
 }
 input{
+  border: 2px solid white;
+  border-radius: 5px;
   margin-top: auto;
   margin-bottom:auto;
   padding-left: 5%;
   width: 80%;
   height: 50%;
+  font-family: Courier New, monospace;
+  font-weight: 100;
 }
 h1 {
   text-align: center;
   color: lightgreen;
   font-weight: 100;
+}
+button {
+  display: block;
+  width:20%;
+  background-color: pink;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid white;
+  font-family: Courier New, monospace;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-top: 0.5em;
+  font-size: 1.25em;
+}
+button:hover {
+  text-align: center;
+  width:22%;
+  height:1.7em;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0.5em;
+  margin-bottom:auto;
 }
